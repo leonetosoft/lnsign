@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography;
-using Microsoft.Build.Framework;
 using System.Security;
 using iTextSharp.text.pdf.security;
 using iTextSharp.text.pdf;
@@ -19,23 +18,16 @@ namespace lnsign
 
     public class SignDocumentRequestBody
     {
-        [Required]
         public string URInputPdf { get; set; }
 
-        [Required]
         public string URIOutputPdf { get; set; }
 
-        [Required]
         public string URImgSignature { get; set; }
-
-        [Required]
         public string CertSubject { get; set; }
 
-        [Required]
         public string SignatureReason { get; set; }
 
 
-        [Required]
         public string SignatureLocation { get; set; }
 
         public string token { get; set; }
@@ -49,16 +41,16 @@ namespace lnsign
         public bool enviarEmail { get; set; }
         public bool enviarSms { get; set; }
 
-        [Required]
+      
         public int ImgSignaturePositionX { get; set; }
 
-        [Required]
+     
         public int ImgSignaturePositionY { get; set; }
 
-        [Required]
+   
         public int ImgSignatureHeight { get; set; }
 
-        [Required]
+
         public int ImgSignatureWidth { get; set; }
     }
 

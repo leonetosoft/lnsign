@@ -1,6 +1,9 @@
 ﻿namespace lnsign
 {
+    using Newtonsoft.Json;
     using System;
+    using System.Net.Http;
+    using System.Threading.Tasks;
     using System.Web.Http;
 
     public class ResponseSign
@@ -13,10 +16,17 @@
 
  
        // POST api/values 
-        public WsResponse<ResponseSign> Post([FromBody]SignDocumentRequestBody value)
+        public async Task<WsResponse<ResponseSign>> Post(HttpRequestMessage request)
         {
+           
             try
             {
+                var json = await request.Content.ReadAsStringAsync();
+                //JavaScriptSerializer jss = new JavaScriptSerializer();
+                
+                SignDocumentRequestBody value = JsonConvert.DeserializeObject<SignDocumentRequestBody>(json);
+
+                //SignDocumentRequestBody
                 return new WsResponse<ResponseSign>
                 {
                     code = 1,
@@ -26,6 +36,8 @@
             }
             catch(Exception e)
             {
+                Console.WriteLine(e);
+               
                 return new WsResponse<ResponseSign>
                 {
                     code = 2,
