@@ -67,7 +67,7 @@ _A api sempre vai retornar o código 200 (código HTTP). Para identificar os err
        "ImgSignaturePositionX":  30  (onde vai aparecer a assinatura na pos X do documento), 
        "ImgSignaturePositionY":  150  (onde vai aparecer a assinatura na pos Y do documento), 
        "ImgSignatureWidth":  50, (largura da assinatura),
-        "ImgSignatureHeight":  50, (altura da assinatura),
+       "ImgSignatureHeight":  50, (altura da assinatura),
        "SignatureReason":  "teste", (Esse campo aparece no PDF assinado quando abre ele no adobe)
        "SignatureLocation":  "teste"(Esse campo aparece no PDF assinado quando abre ele no adobe)
     } 
